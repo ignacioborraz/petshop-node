@@ -8,10 +8,7 @@ Pet.init({
         type: DataTypes.STRING,
         allowNull: false
     },
-    tag: {
-        type: DataTypes.STRING,
-        allowNull: false
-    }
+    tag: DataTypes.STRING
 }, {
     modelName: "Pet",
     timestamps: true,
