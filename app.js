@@ -8,6 +8,8 @@ import swaggerOptions from "./config/swagger.js";
 import swaggerJSDoc from "swagger-jsdoc";
 import { serve, setup } from "swagger-ui-express";
 import router from "./router/index.js";
+import cors from "cors";
+import logger from "morgan";
 
 const app = express();
 
@@ -21,6 +23,9 @@ app.set("views", __dirname + "/views");
 /**
  * using middlewares
  */
+app.use(cors());
+app.use(logger("dev"));
+app.use("/public", express.static(__dirname + "/public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

@@ -15,7 +15,7 @@ export default async (req, res, next) => {
         }
         return res.status(404).json({
             code: 404,
-            message: "unexpected error"
+            message: "not found"
         });
     } catch (error) {
         next(error);

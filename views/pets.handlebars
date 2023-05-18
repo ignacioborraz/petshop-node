@@ -1,0 +1,22 @@
+<main class="align-items-center">
+	<h1>{{mainTitle}}</h1>
+	<div class="d-flex justify-content-evenly flex-wrap mb-3">
+		{{#if pets}}
+		{{#each pets}}
+		<div class="card mb-2 ms-1 me-1" style="width: 10rem;">
+			<img src="/public/img/logo.jpg" class="card-img-top" alt={{this.id}}>
+			<div class="card-body">
+				<h5 class="card-title">{{this.name}}</h5>
+				<p class="card-text">{{this.tag}}</p>
+				<a href="/pets/{{this.id}}" class="btn btn-primary">+info</a>
+			</div>
+		</div>
+		{{/each}}
+		{{else}}
+			<h5 class="card-title">NOT FOUND PETS</h5>
+		{{/if}}
+	</div>
+	{{#if xNext}}
+	<a class="btn btn-primary mb-3" href={{xNext}}>NEXT</a>
+	{{/if}}
+</main>

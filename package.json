@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/ignacioborraz/petshop-node#readme",
   "devDependencies": {
+    "@faker-js/faker": "^8.0.1",
     "eslint": "^8.40.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.27.5",
