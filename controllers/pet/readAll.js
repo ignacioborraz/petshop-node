@@ -11,12 +11,13 @@ export default async (req, res, next) => {
             order: [["name", "ASC"]],
             offset,
             limit: offset || limit,
-            attributes: ["id", "name", "tag"]
+            attributes: ["id", "name", "tag"],
+            raw: true
         });
         if (pets.length === 0) {
             return res.status(404).json({
                 code: 404,
-                message: "unexpected error"
+                message: "not foundr"
             });
         }
         if (pets.length < count && page < pages - 1) {
