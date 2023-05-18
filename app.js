@@ -4,6 +4,10 @@ import errorHandler from "./middlewares/errorHandler.js";
 import notFoundHandler from "./middlewares/notFoundHandler.js";
 import { engine } from "express-handlebars";
 import { __dirname } from "./utils.js";
+import swaggerOptions from "./config/swagger.js";
+import swaggerJSDoc from "swagger-jsdoc";
+import { serve, setup } from "swagger-ui-express";
+import router from "./router/index.js";
 
 const app = express();
 
@@ -19,6 +23,17 @@ app.set("views", __dirname + "/views");
  */
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+/**
+ * setting documentation
+ */
+const specs = swaggerJSDoc(swaggerOptions);
+app.use("/apidocs", serve, setup(specs));
+
+/**
+ * setting router
+ */
+app.use(router);
 app.use(errorHandler);
 app.use(notFoundHandler);
 
