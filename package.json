@@ -9,7 +9,7 @@
     "start": "node ./server.js",
     "dev": "nodemon ./server.js",
     "data": "node ./src/seeds/pets.js",
-    "test": "mocha ./src/test/*.test.js",
+    "tests": "mocha ./src/test/*.test.js",
     "stress": "npx artillery run ./stress.yaml",    
     "docs": "npx apidoc -i ./src/docs -e node_modules -o ./public"
   },
