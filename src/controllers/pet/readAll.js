@@ -2,7 +2,7 @@ import Pet from "../../models/pet.js";
 
 export default async (req, res, next) => {
     try {
-        const page = Number(req.query.page) || 0;
+        const page = Number(req.headers["x-next"]) || 0;
         const limit = req.query.limit || 100;
         const offset = page * limit;
         const count = await Pet.count();
@@ -21,12 +21,7 @@ export default async (req, res, next) => {
             });
         }
         if (pets.length < count && page < pages - 1) {
-            res.set("x-next", `/api/pets?limit=${limit}&page=${page + 1}`);
-            return res.status(200).json({
-                code: 200,
-                pets,
-                "x-next": `/api/pets?limit=${limit}&page=${page + 1}`
-            });
+            res.set("x-next", page + 1);
         }
         return res.status(200).json({
             code: 200,
