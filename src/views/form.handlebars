@@ -1,0 +1,14 @@
+<main class="align-items-center">
+    <h1>{{mainTitle}}</h1>
+    <form class="w-50 d-flex flex-column align-items-center mb-3" id="productsForm" action="/pets", method="POST">
+        <fieldset class="mb-2">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" name="name" id="name" />
+        </fieldset>
+        <fieldset class="mb-2">
+            <label for="tag" class="form-label">Tag</label>
+            <input type="text" class="form-control" name="tag" id="tag" />
+        </fieldset>
+        <button id='newProduct' type="submit" class="btn btn-danger mt-2">Create!</button>
+    </form>
+</main>

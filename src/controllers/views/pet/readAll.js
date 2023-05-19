@@ -21,7 +21,7 @@ export default async (req, res, next) => {
                 title: "LIST OF PETS",
                 navigation: [
                     { link: "/pets", text: "SEE PETS" },
-                    { link: "/pets/new", text: "CREATE PET" }
+                    { link: "/pets/form", text: "CREATE PET" }
                 ],
                 mainTitle: "LIST OF PETS",
                 pets: pets.length > 0 ? pets : null,

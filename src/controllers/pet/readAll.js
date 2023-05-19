@@ -17,7 +17,7 @@ export default async (req, res, next) => {
         if (pets.length === 0) {
             return res.status(404).json({
                 code: 404,
-                message: "not foundr"
+                message: "not found"
             });
         }
         if (pets.length < count && page < pages - 1) {
