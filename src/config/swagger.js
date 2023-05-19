@@ -11,7 +11,7 @@ const swaggerOptions = {
             }
         }
     },
-    apis: [`${__dirname}/docs/**/*.yaml`]
+    apis: [`${__dirname}/public/docs/*.yaml`]
 };
 
 export default swaggerOptions;

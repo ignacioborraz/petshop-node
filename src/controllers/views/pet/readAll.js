@@ -15,7 +15,7 @@ export default async (req, res, next) => {
             raw: true
         });
         if (pets.length < count && page < pages - 1) {
-            res.set("x-next", `/api/pets?limit=${limit}&page=${page + 1}`);
+            res.set("x-next", page + 1);
             return res.status(200).render("pets", {
                 css: "/public/styles/main.css",
                 title: "LIST OF PETS",
@@ -25,7 +25,8 @@ export default async (req, res, next) => {
                 ],
                 mainTitle: "LIST OF PETS",
                 pets: pets.length > 0 ? pets : null,
-                xNext: `/pets?limit=${limit}&page=${page + 1}`
+                xNext: page + 1,
+                script: "/public/scripts/all.js"
             });
         }
         return res.status(200).render("pets", {
