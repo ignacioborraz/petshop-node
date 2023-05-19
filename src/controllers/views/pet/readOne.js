@@ -12,7 +12,7 @@ export default async (req, res, next) => {
             title: "PET DETAIL",
             navigation: [
                 { link: "/pets", text: "SEE PETS" },
-                { link: "/pets/new", text: "CREATE PET" }
+                { link: "/pets/form", text: "CREATE PET" }
             ],
             mainTitle: "PET DETAIL",
             pet: pet?.toJSON() || null

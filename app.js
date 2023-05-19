@@ -1,13 +1,13 @@
 import "dotenv/config.js";
 import express from "express";
-import errorHandler from "./middlewares/errorHandler.js";
-import notFoundHandler from "./middlewares/notFoundHandler.js";
+import errorHandler from "./src/middlewares/errorHandler.js";
+import notFoundHandler from "./src/middlewares/notFoundHandler.js";
 import { engine } from "express-handlebars";
 import { __dirname } from "./utils.js";
-import swaggerOptions from "./config/swagger.js";
+import swaggerOptions from "./src/config/swagger.js";
 import swaggerJSDoc from "swagger-jsdoc";
 import { serve, setup } from "swagger-ui-express";
-import router from "./router/index.js";
+import router from "./src/router/index.js";
 import cors from "cors";
 import logger from "morgan";
 
@@ -18,7 +18,7 @@ const app = express();
  */
 app.engine("handlebars", engine());
 app.set("view engine", "handlebars");
-app.set("views", __dirname + "/views");
+app.set("views", __dirname + "/src/views");
 
 /**
  * using middlewares

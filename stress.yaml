@@ -1,0 +1,13 @@
+config:
+  target: http://localhost:8080/api
+  phases:
+    - duration: 20
+      arrivalRate: 100
+      name: stress load
+scenarios:
+  - name: lists pets
+    flow:
+      - get:
+          url: /pets
+      - get:
+          url: /pets/1

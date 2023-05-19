@@ -1,5 +1,5 @@
 import app from "./app.js";
-import sequelize from "./config/sequelize.js";
+import sequelize from "./src/config/sequelize.js";
 
 const port = process.env.PORT || 8080;
 const ready = () => console.log("server ready on port " + port);
