@@ -1,4 +1,4 @@
-import Pet from "../../../models/pet.js";
+import { Pet } from "../../../models/models.js";
 
 export default async (req, res, next) => {
     try {
