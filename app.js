@@ -1,4 +1,5 @@
 import "dotenv/config.js";
+import "./src/config/asociations.js";
 import express from "express";
 import errorHandler from "./src/middlewares/errorHandler.js";
 import notFoundHandler from "./src/middlewares/notFoundHandler.js";
