@@ -1,4 +1,4 @@
-import Pet from "../../../models/pet.js";
+import { Pet/* , User */ } from "../../../models/models.js";
 
 export default async (req, res, next) => {
     try {
@@ -12,8 +12,10 @@ export default async (req, res, next) => {
             offset,
             limit: offset || limit,
             attributes: ["id", "name", "tag"],
+            // include: [{ model: User, where: { id: 2 }, attributes: ["name"] }],
             raw: true
         });
+        console.log(pets);
         if (pets.length < count && page < pages - 1) {
             res.set("x-next", page + 1);
             return res.status(200).render("pets", {
@@ -34,7 +36,7 @@ export default async (req, res, next) => {
             title: "LIST OF PETS",
             navigation: [
                 { link: "/pets", text: "SEE PETS" },
-                { link: "/pets/new", text: "CREATE PET" }
+                { link: "/pets/form", text: "CREATE PET" }
             ],
             mainTitle: "LIST OF PETS",
             pets
