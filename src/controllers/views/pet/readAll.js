@@ -1,4 +1,5 @@
-import { Pet/* , User */ } from "../../../models/models.js";
+import Pet from "../../../models/pet.js";
+// import User from "../../../models/user.js";
 
 export default async (req, res, next) => {
     try {

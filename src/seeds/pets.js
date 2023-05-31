@@ -1,11 +1,13 @@
-import { Pet, User } from "../models/pet.js";
+import User from "../models/user.js";
+import Pet from "../models/pet.js";
+import "../config/asociations.js";
 import sequelize from "../config/sequelize.js";
 import { faker } from "@faker-js/faker";
 
 const createData = async (users, pets) => {
     try {
+        await sequelize.sync({ force: true });
         for (let i = 1; i <= users; i++) {
-            await sequelize.sync();
             const randomName = faker.person.firstName();
             const randoMail = faker.internet.exampleEmail();
             const user = await User.create({ name: randomName, mail: randoMail });
@@ -20,4 +22,4 @@ const createData = async (users, pets) => {
         console.log(error);
     }
 };
-createData(10, 10);
+createData(15, 8);
