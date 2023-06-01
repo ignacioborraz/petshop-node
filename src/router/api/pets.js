@@ -7,6 +7,7 @@ const router = Router();
 
 router.post("/", create);
 router.get("/", readAll);
+// router.get("/:petId", passport.authenticate('jwt',{ session:false }), readOne);
 router.get("/:petId", readOne);
 
 export default router;

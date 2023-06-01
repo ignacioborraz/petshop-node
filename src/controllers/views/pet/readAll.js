@@ -13,7 +13,7 @@ export default async (req, res, next) => {
             offset,
             limit: offset || limit,
             attributes: ["id", "name", "tag"],
-            // include: [{ model: User, where: { id: 2 }, attributes: ["name"] }],
+            // include: [{ model: User, where: { id: 2 }, attributes: ["name"] }], filtrar por User
             raw: true
         });
         console.log(pets);

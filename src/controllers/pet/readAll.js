@@ -13,6 +13,7 @@ export default async (req, res, next) => {
             limit: offset || limit,
             attributes: ["id", "name", "tag"],
             raw: true
+            // include: [{ model: Store, where: { locationId: req.user.locationId } }]; filtrar por store con passport+jwt
         });
         if (pets.length === 0) {
             return res.status(404).json({
@@ -21,7 +22,7 @@ export default async (req, res, next) => {
             });
         }
         if (pets.length < count && page < pages - 1) {
-            res.set("x-next", page + 1);
+            res.set("x-next", page + 1); // setear headers con la pagina siguiente
         }
         return res.status(200).json({
             code: 200,

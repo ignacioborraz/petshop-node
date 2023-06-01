@@ -5,6 +5,7 @@ import { faker } from "@faker-js/faker";
 
 describe("pets tests", () => {
 	describe("on success", () => {
+		// let token = 'asasajskajsak.234dcscx.sdvsdvc'; 401 en caso de usar passport+jwt
 		it("[GET - /api/pets] should return paginated array of pets", async () => {
 			const response = await request(app).get("/api/pets")
 			expect(response.statusCode).to.equal(200);
